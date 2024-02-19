@@ -1,0 +1,43 @@
+{
+  "guessing game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "guessing-game.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "jose": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest-mock-random": "^1.0.2"
+  }
+}
+let account = createAccount("1234", 100);
+
+account.checkBalance("oops");
+// "Invalid PIN."
+
+account.deposit("1234", 250);
+// "Succesfully deposited $250. Current balance: $350."
+
+account.withdraw("1234" 300);
+// "Succesfully withdrew $300. Current balance: $50."
+
+account.withdraw("1234" 10);
+// "Withdrawal amount exceeds account balance. Transaction cancelled."
+
+account.changePin("1234", "5678");
+// "PIN successfully changed!"
+let game = guessingGame();
+game(50); // "50 is too low!"
+game(90); // "90 is too high!"
+game(70); // "You win! You found 70 in 3 guesses."
+game(70); // "The game is over, you already won!"
+let firstAdder = curriedAdd();
+let secondAdder = curriedAdd();
+let thirdAdder = curriedAdd();
+
+firstAdder(); // 0
+secondAdder(1)(2)(); // 3
+thirdAdder(2)(8)(5)(1)(); // 16
